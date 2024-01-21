@@ -1,5 +1,5 @@
 const express = require('express');
-
+const authController = require('../controller/authController');
 const router=express.Router();
 
 //testing route
@@ -7,11 +7,12 @@ router.get('/test', (req,res) => {
     res.json({"mesg": "test"});
 });
 
+//register
+router.post('/register',authController.register);
 //user
-
+router.post('/user',authController.login);
 
 //login
-//register
 //logout
 //refresh
 
