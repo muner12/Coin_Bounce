@@ -1,7 +1,11 @@
 const express= require('express');
-
+const dbConnect=require('./database/index');
+const {PORT}=require('./config/index');
 const app = express();
 
-const PORT=5000;
 
-app.listen(PORT, console.log(`server listening on ${PORT}`));
+
+dbConnect();
+app.get("/",(req,res)=>res.send({msg:"hello world"}))
+
+app.listen(PORT, console.log(`server listening on http://localhost:${PORT}`));
