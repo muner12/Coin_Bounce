@@ -1,6 +1,0 @@
-{
-  "dependencies": {
-    "bcryptjs": "^2.4.3",
-    "joi": "^17.12.0"
-  }
-}
