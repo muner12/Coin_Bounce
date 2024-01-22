@@ -5,7 +5,7 @@ const router= require("./routes/index");
 const errorHandler= require("./middlware/errorHandler");
 
 const app = express();
-
+app.use(express.json());
 app.use(router);
 
 dbConnect();

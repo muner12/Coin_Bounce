@@ -7,12 +7,13 @@ const errorHandler=(error,req,res,next)=>{
     }
 
     if(error instanceof ValidationError){
-        status=error.status
+        status=422
         data.message=error.message
         return res.status(status).json(data);
     }
 
-    if(error.status){
+    if(error.status!=undefined){
+        console.log(error.status);
         status=error.status
     }
     if(error.message){
